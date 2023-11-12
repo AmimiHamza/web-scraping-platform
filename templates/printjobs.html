@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Scraping Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Web Scraping Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="table_div">
+      <br />
+      <div class="first">
+        <button class="button-64" role="button">
+          <span class="text"
+            ><a href="download/jobs/{{ skill }}">Download the file</a></span
+          >
+        </button>
+        <label for="variable">Results for: {{ skill }}</label>
+        <button class="button-85" role="button">
+          <span class="text"><a href="exitj">Exit</a></span>
+        </button>
+      </div>
+
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Title</th>
+            <th>Company Name</th>
+            <th>Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in range(0, lines|length, 3) %} {% set rank =
+          lines[i].split(')')[0] %} {% set title = lines[i][10:] if i >= 9 else
+          lines[i][9:] %} {% set company = lines[i+1][14:].strip() %} {% set
+          location = lines[i+2][10:].strip() %}
+          <tr>
+            <td>{{ rank }}</td>
+            <td>{{ title }}</td>
+            <td>{{ company }}</td>
+            <td>{{ location }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

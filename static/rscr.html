@@ -1,0 +1,395 @@
+<html lang="en-US">
+  <head>
+    <link rel="stylesheet" href="styleram.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+    <script>
+      function showMessage() {
+        console.log("Form submitted!");
+      }
+    </script>
+    <style>
+      #loading-overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 5px;
+        display: none;
+        z-index: 9999;
+        text-align: center;
+      }
+
+      .pl,
+      .pl__worm {
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      .pl {
+        animation-name: bump;
+        animation-timing-function: linear;
+        width: 8em;
+        height: 8em;
+      }
+      .pl__ring {
+        stroke: hsla(var(--hue), 10%, 10%, 0.1);
+        transition: stroke 0.3s;
+      }
+      .pl__worm {
+        animation-name: worm;
+        animation-timing-function: cubic-bezier(0.42, 0.17, 0.75, 0.83);
+      }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: hsl(var(--hue), 10%, 10%);
+          --fg: hsl(var(--hue), 10%, 90%);
+        }
+        .pl__ring {
+          stroke: hsla(var(--hue), 10%, 90%, 0.1);
+        }
+      }
+
+      /* Animations */
+      @keyframes bump {
+        from,
+        42%,
+        46%,
+        51%,
+        55%,
+        59%,
+        63%,
+        67%,
+        71%,
+        74%,
+        78%,
+        81%,
+        85%,
+        88%,
+        92%,
+        to {
+          transform: translate(0, 0);
+        }
+        44% {
+          transform: translate(1.33%, 6.75%);
+        }
+        53% {
+          transform: translate(-16.67%, -0.54%);
+        }
+        61% {
+          transform: translate(3.66%, -2.46%);
+        }
+        69% {
+          transform: translate(-0.59%, 15.27%);
+        }
+        76% {
+          transform: translate(-1.92%, -4.68%);
+        }
+        83% {
+          transform: translate(9.38%, 0.96%);
+        }
+        90% {
+          transform: translate(-4.55%, 1.98%);
+        }
+      }
+      @keyframes worm {
+        from {
+          stroke-dashoffset: 10;
+        }
+        25% {
+          stroke-dashoffset: 295;
+        }
+        to {
+          stroke-dashoffset: 1165;
+        }
+      }
+    </style>
+  </head>
+  <body class="loaded" style="overflow-x: hidden">
+    <div id="loading-overlay">
+      <svg
+        class="pl"
+        viewBox="0 0 128 128"
+        width="200px"
+        height="200px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="hsl(193,90%,55%)" />
+            <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+          </linearGradient>
+        </defs>
+
+        <path
+          class="pl__worm"
+          d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z"
+          fill="none"
+          stroke="url(#pl-grad)"
+          stroke-width="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-dasharray="44 1111"
+          stroke-dashoffset="10"
+        />
+
+        <text
+          x="50%"
+          y="50%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          font-family="Arial, sans-serif"
+          font-size="18"
+          fill="#ffffff"
+        >
+          Scraping...
+        </text>
+      </svg>
+    </div>
+    <script>
+      function showLoading() {
+        var overlay = document.getElementById("loading-overlay");
+        overlay.style.display = "flex";
+
+        // Simulating a process delay
+        setTimeout(hideLoading, 3000);
+      }
+    </script>
+    <header style="height: 56px">
+      <h1>Web Scraping Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="home" class="hero-section">
+      <div class="hero-content">
+        <div class="hero-title">
+          <h1
+            style="margin-left: 120px; font-size: 50px; color: white"
+            class="hero-title"
+          >
+            Welcome to
+          </h1>
+          <h1
+            style="margin-left: 120px; font-size: 30px; color: white"
+            class="hero"
+          >
+            HMScrape
+          </h1>
+        </div>
+        <br /><br />
+        <div class="hero-text">
+          <h1 style="margin-left: 120px; font-size: 20px; color: gray">
+            Stay up-to-date with the latest cryptocurrency <br />
+            prices and fluctuations on HMScrape
+            <br />
+          </h1>
+        </div>
+        <br /><br /><br /><br />
+        <div style="margin-left: 120px; font-size: 20px" class="hero-button">
+          <form method="get" action="/printcrypto">
+            <button
+              class="button-85"
+              style="font-size: 20px"
+              onclick="showLoading()"
+              type="submit"
+            >
+              Start Scraping
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div style="margin-right: 250px" class="col-md-66">
+        <div class="dreamit-hero-thumb">
+          <div class="hero-main-thumb">
+            <img width="250px" height="500px" src="images/main.png" alt="" />
+          </div>
+          <div class="hero-thumb-inner1 bounce-animate">
+            <img width="350px" height="280px" src="images/img1.png" alt="" />
+          </div>
+          <div class="hero-thumb-inner2 bounce-animate2">
+            <img width="250px" height="200px" src="images/img2.png" alt="" />
+          </div>
+          <div class="hero-thumb-inner3 bounce-animate4">
+            <img width="225px" height="150px" src="images/img3.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-section pt-80 pb-80" id="table">
+      <div
+        class="cripto-area pt-100 pb-100"
+        style="margin-left: 100px; width: 500px"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="dreamit-cripto-thumb">
+                <div class="cripto-main-thumb">
+                  <img
+                    style="width: 350px; height: 350px"
+                    src="images/cripto.png"
+                    alt=""
+                  />
+                </div>
+                <div class="cripto-thumb-inner bounce-animate4">
+                  <img
+                    style="width: 100px; height: 180px"
+                    src="images/cripto1.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="dreamit-section-title">
+                <p class="section-text" style="color: grey">
+                  Step into the world of cryptocurrencies with HMScrape. <br />
+                  Track price changes, uncover hidden opportunities, <br />
+                  and stay ahead of the market. Start your crypto journey today
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-reponsive box" style="width: 30%">
+        <table
+          style="width: 700px; height: 100px; margin-left: -200px"
+          class="table table-striped table-bordered"
+        >
+          <thead>
+            <tr>
+              <th><span>#</span> Currency</th>
+              <th>$ Price</th>
+              <th>24H Change</th>
+              <th>Market Cap.</th>
+              <th>T. Supply</th>
+              <th>24H Volume</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="single">
+              <td>
+                <span>1</span>
+                <img src="images/ra-1.png" alt="" />
+                <h6>Bitcoin <span class="img-text">BTC</span></h6>
+              </td>
+              <td>$53,967.089</td>
+              <td>
+                <img
+                  class="images"
+                  src="images/resource/icon7.png"
+                  alt=""
+                /><span class="color-1">5.43%</span>
+              </td>
+              <td>0.05M</td>
+              <td>1.5K</td>
+              <td>68.5K</td>
+            </tr>
+            <tr class="one">
+              <td>
+                <span>2</span>
+                <img src="images/ra-2.png" alt="" />
+                <h6>Ethereum <span class="img-text">ETH</span></h6>
+              </td>
+              <td>$98,967.056</td>
+              <td>
+                <img class="images" src="images/icon8.png" alt="" />
+                <span class="color-2">6.85</span>
+              </td>
+              <td>10.80M</td>
+              <td>5.5K</td>
+              <td>85.09K</td>
+            </tr>
+            <tr class="double">
+              <td>
+                <span>3</span><img src="images/ra-3.png" alt="" />
+                <h6>Tether <span class="img-text">THR</span></h6>
+              </td>
+              <td>$44,967.090</td>
+              <td>
+                <img class="images" src="images/icon7.png" alt="" /><span
+                  class="color-1"
+                  >3.96%</span
+                >
+              </td>
+              <td>0.05M</td>
+              <td>0.3k</td>
+              <td>100k</td>
+            </tr>
+            <tr class="one">
+              <td>
+                <span>4</span>
+                <img src="images/ra-4.png" alt="" />
+                <h6>Solana <span class="img-text">SOL</span></h6>
+              </td>
+              <td>$53,967.089</td>
+              <td>
+                <img class="images" src="images/icon7.png" alt="" /><span
+                  class="color-1"
+                  >9.30%</span
+                >
+              </td>
+              <td>12.09M</td>
+              <td>1.5K</td>
+              <td>68.5K</td>
+            </tr>
+            <tr class="triple">
+              <td>
+                <span>5</span>
+                <img src="images/ra-5.png" alt="" />
+                <h6>Binance Coin <span class="img-text">BNC</span></h6>
+              </td>
+              <td>$67,967.070</td>
+              <td>
+                <img class="images" src="images/icon8.png" alt="" /><span
+                  class="color-2"
+                  >8.90%</span
+                >
+              </td>
+              <td>0.07M</td>
+              <td>45K</td>
+              <td>98.9K</td>
+            </tr>
+            <tr class="one">
+              <td>
+                <span>6</span>
+                <img src="images/ra-6.png" alt="" />
+                <h6>Dogecoin <span class="img-text">DOGE</span></h6>
+              </td>
+              <td>$53,967.089</td>
+              <td>
+                <img class="images" src="images/icon7.png" alt="" /><span
+                  class="color-1"
+                  >5.43%</span
+                >
+              </td>
+              <td>0.05M</td>
+              <td>1.5K</td>
+              <td>68.5K</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

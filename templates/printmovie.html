@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Scraping Website</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Web Scraping Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="table_div">
+      <br />
+      <div class="first">
+        <button class="button-64" role="button">
+          <span class="text"
+            ><a href="download/movies/{{ product }}">Download the file</a></span
+          >
+        </button>
+        <label for="variable">Results for: {{ product }}</label>
+        <button class="button-85" role="button">
+          <span class="text"><a href="exitm">Exit</a></span>
+        </button>
+      </div>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Cast</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in range(0, lines|length, 4) %} {% set rank =
+          lines[i].split(')')[0] %} {% set title = lines[i][10:] if i >= 9 else
+          lines[i][9:] %} {% set year = lines[i+1][6:].strip() %} {% set cast =
+          lines[i+2][6:].strip() %}
+          <tr>
+            <td>{{ rank }}</td>
+            <td>{{ title }}</td>
+            <td>{{ year }}</td>
+            <td>{{ cast }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <footer>
+      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" type="text/css" media="all" />
+    <title>Cryptos Table</title>
+    <script>
+      function showMessage() {
+        console.log("Form submitted!");
+      }
+    </script>
+    <style>
+      #loading-overlay {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 30px;
+        border-radius: 5px;
+        display: none;
+        text-align: center;
+        z-index: 9999;
+      }
+
+      .pl,
+      .pl__worm {
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      .pl {
+        animation-name: bump;
+        animation-timing-function: linear;
+        width: 8em;
+        height: 8em;
+      }
+      .pl__ring {
+        stroke: hsla(var(--hue), 10%, 10%, 0.1);
+        transition: stroke 0.3s;
+      }
+      .pl__worm {
+        animation-name: worm;
+        animation-timing-function: cubic-bezier(0.42, 0.17, 0.75, 0.83);
+      }
+
+      /* Dark theme */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: hsl(var(--hue), 10%, 10%);
+          --fg: hsl(var(--hue), 10%, 90%);
+        }
+        .pl__ring {
+          stroke: hsla(var(--hue), 10%, 90%, 0.1);
+        }
+      }
+
+      /* Animations */
+      @keyframes bump {
+        from,
+        42%,
+        46%,
+        51%,
+        55%,
+        59%,
+        63%,
+        67%,
+        71%,
+        74%,
+        78%,
+        81%,
+        85%,
+        88%,
+        92%,
+        to {
+          transform: translate(0, 0);
+        }
+        44% {
+          transform: translate(1.33%, 6.75%);
+        }
+        53% {
+          transform: translate(-16.67%, -0.54%);
+        }
+        61% {
+          transform: translate(3.66%, -2.46%);
+        }
+        69% {
+          transform: translate(-0.59%, 15.27%);
+        }
+        76% {
+          transform: translate(-1.92%, -4.68%);
+        }
+        83% {
+          transform: translate(9.38%, 0.96%);
+        }
+        90% {
+          transform: translate(-4.55%, 1.98%);
+        }
+      }
+      @keyframes worm {
+        from {
+          stroke-dashoffset: 10;
+        }
+        25% {
+          stroke-dashoffset: 295;
+        }
+        to {
+          stroke-dashoffset: 1165;
+        }
+      }
+    </style>
+    <style>
+      /* footer {
+        position: fixed;
+      } */
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .table-container {
+        margin-top: 100px;
+        display: flex;
+        justify-content: center;
+      }
+
+      th,
+      td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: gray;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Web Scraping Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="first">
+      <button
+        onclick="showLoading()"
+        class="button-64"
+        style="margin-top: 150px; margin-left: 80px"
+        role="button"
+      >
+        <span class="text"><a href="/printcrypto">scrape again</a></span>
+      </button>
+      <h1
+        style="
+          margin-top: -80px;
+          text-align: center;
+          font-size: 24px;
+          font-weight: bold;
+          color: #0066cc;
+        "
+      >
+        the difference between the last 2 scapings
+      </h1>
+      <button
+        class="button-64"
+        style="margin-top: 150px; margin-right: 80px"
+        role="button"
+      >
+        <span class="text"
+          ><a href="downloadxlsx/crypto/delta">Download the file</a></span
+        >
+      </button>
+    </div>
+    <div class="table-container">
+      <table>
+        <tr>
+          <th>Rank</th>
+          <th>Coin</th>
+          <th>Price</th>
+          <th>1h</th>
+          <th>24h</th>
+          <th>7d</th>
+          <th>24h Volume</th>
+          <th>Mkt Cap</th>
+          <th>FDV</th>
+          <th>Mkt Cap/FDV</th>
+        </tr>
+        {% for row in data[:] %}
+        <tr>
+          {% for value in row[:10] %} {# Loop through the first 10 values of
+          each row #}
+          <td>{{ value }}</td>
+          {% endfor %}
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div id="loading-overlay">
+      <svg
+        class="pl"
+        viewBox="0 0 128 128"
+        width="200px"
+        height="200px"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <linearGradient id="pl-grad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="hsl(193,90%,55%)" />
+            <stop offset="100%" stop-color="hsl(223,90%,55%)" />
+          </linearGradient>
+        </defs>
+
+        <path
+          class="pl__worm"
+          d="M92,15.492S78.194,4.967,66.743,16.887c-17.231,17.938-28.26,96.974-28.26,96.974L119.85,59.892l-99-31.588,57.528,89.832L97.8,19.349,13.636,88.51l89.012,16.015S81.908,38.332,66.1,22.337C50.114,6.156,36,15.492,36,15.492a56,56,0,1,0,56,0Z"
+          fill="none"
+          stroke="url(#pl-grad)"
+          stroke-width="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-dasharray="44 1111"
+          stroke-dashoffset="10"
+        />
+
+        <text
+          x="50%"
+          y="50%"
+          dominant-baseline="middle"
+          text-anchor="middle"
+          font-family="Arial, sans-serif"
+          font-size="18"
+          fill="#ffffff"
+        >
+          Scraping...
+        </text>
+      </svg>
+    </div>
+    <script>
+      function showLoading() {
+        var overlay = document.getElementById("loading-overlay");
+        overlay.style.display = "flex";
+
+        // Simulating a process delay
+        setTimeout(hideLoading, 3000);
+      }
+    </script>
+    <footer>
+      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

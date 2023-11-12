@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="stylesign.css" />
+    <!-- Link to your custom CSS file -->
+  </head>
+  <body>
+    <video id="video-bg" loop autoplay muted>
+      <source src="background-video.mp4" type="video/mp4" />
+      <!-- Add more source elements for other video formats, if needed -->
+    </video>
+    <script>
+      // Your JavaScript code goes here
+      const video = document.getElementById("video-bg");
+      video.pause();
+      setTimeout(() => {
+        video.play();
+      }, 4000);
+      video.addEventListener("ended", () => {
+        video.currentTime = 0;
+        video.play();
+      });
+    </script>
+    <div style="display: flex">
+      <h3 style="margin-left: 850px; color: aqua">Already have an account?</h3>
+      <button class="button-73" style="margin-left: 40px">
+        <a href="/formlogin" style="text-decoration: none">log in</a>
+      </button>
+    </div>
+    <div class="container">
+      <div class="form-container">
+        <form
+          class="signup-form"
+          action="/add_user"
+          method="POST"
+          onsubmit="return validateForm()"
+        >
+          <h2 style="color: lime" id="typewriter"></h2>
+          <div class="form-group" id="name-group">
+            <label for="name">First Name:</label><br />
+            <div style="display: flex">
+              <input type="text" id="name" name="name" required />
+              <button
+                type="button"
+                id="name-but"
+                onclick="showNextInput()"
+                style="display: "
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <div class="form-group" id="fname-group" style="display: none">
+            <label for="fname">Last Name:</label><br />
+            <div style="display: flex">
+              <input type="text" id="fname" name="fname" required />
+              <button
+                id="fname-but"
+                type="button"
+                onclick="showNextInput()"
+                style="display: "
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <div class="form-group" id="email-group" style="display: none">
+            <label for="email">Email:</label><br />
+            <div style="display: flex">
+              <input type="email" id="email" name="email" required />
+              <button
+                id="email-but"
+                type="button"
+                onclick="showNextInput()"
+                style="display: "
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <div class="form-group" id="password-group" style="display: none">
+            <label for="password">Password:</label> <br />
+            <div style="display: flex">
+              <input type="password" id="password" name="password" required />
+              <button
+                id="password-but"
+                type="button"
+                onclick="showNextInput()"
+                style="display: "
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <div class="form-group" id="birthday-group" style="display: none">
+            <label for="birthday">Birthday:</label><br />
+            <div style="display: flex">
+              <input type="date" id="birthday" name="birthday" required />
+              <button
+                id="birthday-but"
+                type="button"
+                onclick="showNextInput()"
+                style="display: "
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <p style="color: red">{{ data }}</p>
+          <button type="submit" id="submit-btn" style="display: none">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      var formGroups = [
+        "name-group",
+        "fname-group",
+        "email-group",
+        "password-group",
+        "birthday-group",
+      ];
+      var formbuttons = [
+        "name-but",
+        "fname-but",
+        "email-but",
+        "password-but",
+        "birthday-but",
+      ];
+      var currentGroupIndex = 1;
+
+      function showNextInput() {
+        var currentGroup = document.getElementById(
+          formGroups[currentGroupIndex]
+        );
+        var currentbutton = document.getElementById(
+          formbuttons[currentGroupIndex]
+        );
+        currentGroup.style.display = "";
+
+        document.getElementById(
+          formbuttons[currentGroupIndex - 1]
+        ).style.display = "none";
+
+        currentGroupIndex++;
+        if (currentGroupIndex >= formGroups.length) {
+          document.getElementById(
+            formbuttons[currentGroupIndex - 1]
+          ).style.display = "none";
+          //   document.querySelector(".signup-form button").style.display = "none";
+          document.getElementById("submit-btn").style.display = "block";
+        }
+      }
+
+      function validateForm() {
+        // Add any form validation logic here, if needed
+        return true; // Returning true to allow form submission
+      }
+      // Typewriter effect
+      const text = "Welcome to Hamza AMIMI . let's GOOOOOOOOOOO";
+      let index = 0;
+      const speed = 100; // Adjust speed (milliseconds) to control the typewriter effect
+
+      function typeWriter() {
+        if (index < text.length) {
+          const typewriterElement = document.getElementById("typewriter");
+          const currentChar = text.charAt(index);
+          typewriterElement.innerHTML += `<span style="font-family:cursive;color: white; text-shadow: 3px 3px red;">${currentChar}</span>`;
+          index++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
+</html>

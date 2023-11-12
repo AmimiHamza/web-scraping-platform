@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="styleslogin.css" />
+    <!-- Link to your custom CSS file -->
+  </head>
+  <body>
+    <video id="video-bg" loop autoplay muted>
+      <source src="background-video.mp4" type="video/mp4" />
+      <!-- Add more source elements for other video formats, if needed -->
+    </video>
+    <div style="display: flex">
+      <h3 style="margin-left: 850px; color: aqua">Have no account yet?</h3>
+      <button class="button-73" style="margin-left: 50px">
+        <a href="/form" style="text-decoration: none">Sign in</a>
+      </button>
+    </div>
+    <div class="container">
+      <div class="form-container">
+        <form class="login-form" action="/login" method="POST">
+          <h2
+            style="
+              text-shadow: 2px 2px 5px red;
+              color: white;
+              text-align: center;
+            "
+          >
+            Login
+          </h2>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+            <p style="color: red">{{ data }}</p>
+            <a href="#" onclick="showErrorMessage()">forget password?</a>
+          </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function showErrorMessage() {
+        alert(
+          "we are too lazy to send you a verification code .so please try to remember it yourself"
+        );
+      }
+    </script>
+  </body>
+</html>

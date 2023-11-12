@@ -1,0 +1,783 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 185px 0 123px;
+}
+/*hero content*/
+.hero-content {
+  width: 1000px;
+  display: block;
+}
+.spacer {
+  width: 10%;
+}
+.hero-content:before {
+  position: absolute;
+  content: "";
+  left: -37px;
+  top: 0;
+  width: 2px;
+  height: 410px;
+  background: linear-gradient(to bottom, #1db78f, #0b1528);
+}
+.hero-title h1 {
+  font-size: 62px;
+  font-weight: 400;
+}
+h1.hero {
+  font-weight: 600;
+}
+h1.hero-title {
+  padding: 14px 0 0;
+}
+.hero-title h4 {
+  display: inline-block;
+  padding: 12px 38px;
+  background: #172e38;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.hero-title span {
+  display: inline-block;
+  color: #1db78f;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  left: 14px;
+}
+.hero-title span:before {
+  position: absolute;
+  content: "";
+  width: 40px;
+  height: 40px;
+  line-height: 35px;
+  text-align: center;
+  background: #00ad89;
+  border-radius: 50%;
+  z-index: -1;
+  left: -14px;
+  top: -6px;
+}
+.hero-title span:after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background: #fff;
+  border-radius: 50%;
+  z-index: -1;
+  left: -7px;
+  top: 1px;
+}
+.hero-button a {
+  display: inline-block;
+  font-size: 32px;
+  font-family: "Montserrat";
+  padding: 17px 35px 17px 65px;
+  font-weight: 600;
+  background: #092430;
+  color: #fff;
+  border-radius: 30px;
+  border: 1px solid #00625c;
+  position: relative;
+  z-index: 1;
+}
+.hero-button a:before {
+  position: absolute;
+  content: "";
+  left: 30px;
+  top: 16px;
+  width: 69%;
+  height: 43%;
+  background: url(images/btn.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.hero-text p {
+  color: #919da4;
+  padding: 25px 0 25px;
+}
+.hero-bottom-text p {
+  display: inline-block;
+  color: #fff;
+  margin: 75px 0 0;
+}
+.hero-bottom-text span i {
+  display: inline-block;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  background: #00b98e;
+  text-align: center;
+  border-radius: 50%;
+}
+/*hero thumb*/
+.dreamit-hero-thumb {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-main-thumb2 img {
+  width: 100%;
+}
+
+.hero-thumb-inner2 {
+  position: absolute;
+  z-index: 1;
+  top: 125px;
+  left: -175px;
+}
+.hero-thumb-inner1 {
+  position: absolute;
+  z-index: 1;
+  top: 150px;
+  left: 200px;
+}
+
+.hero-thumb-inner3 {
+  position: absolute;
+  z-index: 1;
+  left: -175px;
+  bottom: 0px;
+}
+/*<!--hero section two-->*/
+.style-two.hero-section {
+  background: url(images/blockchain.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 950px;
+  background-position: center center;
+}
+/*hero content*/
+.style-two .hero-content:before {
+  position: inherit;
+}
+.style-two .hero-title h1 {
+  font-size: 58px;
+  font-weight: 700;
+}
+.style-two .hero-title {
+  position: relative;
+}
+.style-two .hero-title h3 {
+  position: relative;
+  font-size: 58px;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffbd00;
+  padding: 13px 0 0;
+  z-index: 1;
+}
+.style-two .hero-title .shape {
+  position: absolute;
+  height: 105px;
+  width: 408px;
+  background-image: linear-gradient(to bottom, #fabb04, transparent);
+  border-radius: 50%;
+  bottom: -36px;
+  left: -30px;
+  transform: rotate(-5deg);
+}
+.style-two .hero-title .shape::before {
+  content: "";
+  position: absolute;
+  height: 96%;
+  width: 402px;
+  background: #040404;
+  left: 3px;
+  top: 2%;
+  border-radius: 50%;
+}
+.style-two .hero-text {
+  position: relative;
+}
+.style-two .hero-text p {
+  color: #919da4;
+  padding: 13px 0 20px;
+}
+/*style two thumb*/
+.style-two .hero-main-thumb {
+  position: relative;
+  left: 0;
+  top: 16px;
+}
+.style-two .hero-main-thumb img {
+  width: 99%;
+}
+.style-two .hero-thumb-inner1 {
+  position: absolute;
+  z-index: -1;
+  right: -32px;
+  top: -40px;
+}
+.style-two .hero-thumb-inner2 {
+  position: absolute;
+  z-index: 1;
+  top: 120px;
+  left: 50px;
+}
+.style-two .hero-thumb-inner3 {
+  position: absolute;
+  z-index: 1;
+  right: 42px;
+  left: inherit;
+  top: 275px;
+}
+/*hero button 2*/
+.style-two .hero-button a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 17px 34px;
+  font-weight: 500;
+  font-family: "Montserrat";
+  background: #ffbd00;
+  color: #090909;
+  border-radius: 5px;
+  border: 1px solid #ffbd00;
+  position: relative;
+  z-index: 1;
+}
+.style-two .hero-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  right: 0;
+  bottom: 0;
+  left: inherit;
+  top: inherit;
+  width: 26px;
+  height: 22px;
+  background: #ffd761;
+  border-radius: 25px 0 0 0;
+  transition: 0.5s;
+}
+.style-two .hero-button a:hover:before {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+/*style three hero section*/
+.style-three.hero-section {
+  background: url(images/banner-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 950px;
+  background-position: center center;
+}
+/*hero content*/
+.style-three .hero-content:before {
+  position: inherit;
+}
+.style-three .hero-title h1 {
+  font-size: 58px;
+  font-weight: 700;
+}
+.style-three span.hero-title {
+  position: inherit;
+  font-size: 58px;
+  font-weight: 700;
+}
+.style-three .hero-title span:before {
+  position: inherit;
+}
+.style-three .hero-title span:after {
+  position: inherit;
+}
+.style-three .hero-text p {
+  color: #919da4;
+  padding: 23px 0 20px;
+}
+/*hero button*/
+.style-three .hero-button a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 18px 35px 18px 70px;
+  font-weight: 600;
+  background: linear-gradient(to right, #64a6f8 20%, #00cdaa 70%);
+  color: #fff;
+  border-radius: 30px;
+  border: 0;
+  position: relative;
+  z-index: 1;
+}
+.style-three .hero-button a:before {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  background: linear-gradient(to right, #00cdaa 25%, #64a6f8 65%);
+  transform: scale(0);
+  transition: 0.5s;
+  height: 100%;
+  width: 100%;
+}
+.style-three .hero-button a:after {
+  position: absolute;
+  content: "";
+  left: 30px;
+  top: 15px;
+  background: url(images/btn.png);
+  width: 90%;
+  height: 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.style-three .hero-button a:hover:before {
+  transform: scale(1);
+}
+.hero-main-thumb2 img {
+  width: 100%;
+}
+
+.hero-thumb-inner2 {
+  position: absolute;
+  z-index: 1;
+  top: 125px;
+  left: -175px;
+}
+.hero-thumb-inner1 {
+  position: absolute;
+  z-index: 1;
+  top: 150px;
+  left: 200px;
+}
+
+.hero-thumb-inner3 {
+  position: absolute;
+  z-index: 1;
+  left: -175px;
+  bottom: 0px;
+}
+.bounce-animate {
+  animation-name: float-bob;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob;
+  -moz-animation-duration: 2s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob;
+  -ms-animation-duration: 2s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob;
+  -o-animation-duration: 2s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate2 {
+  animation-name: float-bob2;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob2;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob2;
+  -ms-animation-duration: 3s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob2;
+  -o-animation-duration: 3s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate3 {
+  animation-name: float-bob3;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob3;
+  -moz-animation-duration: 3s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob3;
+  -ms-animation-duration: 3s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob3;
+  -o-animation-duration: 3s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate4 {
+  animation-name: float-bob4;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob4;
+  -moz-animation-duration: 5s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob4;
+  -ms-animation-duration: 5s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob4;
+  -o-animation-duration: 5s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate5 {
+  animation-name: float-bob5;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob5;
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob5;
+  -ms-animation-duration: 6s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob5;
+  -o-animation-duration: 6s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate-slow {
+  animation-name: float-bob5;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob5;
+  -moz-animation-duration: 15s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob5;
+  -ms-animation-duration: 15s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob5;
+  -o-animation-duration: 15s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.bounce-animate-3 {
+  animation-name: float-bob6;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -moz-animation-name: float-bob6;
+  -moz-animation-duration: 6s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: float-bob6;
+  -ms-animation-duration: 6s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  -o-animation-name: float-bob6;
+  -o-animation-duration: 6s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+}
+.table-section {
+  background: #0d182e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding: 185px 0 123px;
+}
+.table-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.explore_menu {
+  text-align: right;
+}
+.explore_menu form select {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 36px;
+  font-weight: 400;
+  color: #fff;
+  transition: 0.5s;
+  border: 1px solid #003c44;
+  background: #153841;
+  margin: 60px 10px 0 0;
+  border-radius: 6px;
+}
+.explore_menu1 form select {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 36px;
+  font-weight: 400;
+  color: #fff;
+  transition: 0.5s;
+  background: #2a273e;
+  margin: 0px 10px 40px 0;
+  border-radius: 6px;
+  border: 0;
+}
+span.table-title {
+  background: #153841;
+  font-size: 16px;
+  color: #00b98e;
+  font-weight: 400;
+  padding: 2px 12px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-right: 10px;
+  margin-top: 18px;
+}
+.table-reponsive.box {
+  width: 100%;
+}
+.box {
+  padding: 20px 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+div#example_length label {
+  display: none;
+}
+div#example_filter label {
+  color: #fff;
+}
+.dataTables_wrapper .dataTables_filter input {
+  border: 1px solid #332269;
+  color: #fff;
+  margin-bottom: 18px;
+}
+.table-bordered td,
+.table-bordered th {
+  border: none;
+}
+.table > :not(:last-child) > :last-child > * {
+  border-bottom-color: currentColor;
+  color: #fff;
+}
+tr.one {
+  background: rgb(11, 30, 49);
+}
+.table-bordered {
+  border: 2px solid #013a43;
+  border-radius: 10px !important;
+}
+th.sorting.sorting_asc {
+  color: #fff;
+}
+th.sorting {
+  color: #fff;
+}
+span.color-1 {
+  padding: 0 0 0 10px !important;
+  color: #88dba9;
+}
+span.color-2 {
+  padding: 0 0 0 4px !important;
+  color: #88dba9;
+}
+span.color-2 {
+  padding: 0 0 0 7px !important;
+  color: #db2304;
+}
+img.images {
+  margin: 0 !important;
+}
+th#all_token span {
+  padding: 0 70px 0 20px;
+}
+.table > thead tr {
+  background: #0b1e31;
+  height: 60px;
+}
+.table-bordered > :not(caption) > * {
+  border: 1px solid #003c44;
+}
+.table > thead tr th {
+  padding: 15px 0 15px;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Montserrat";
+}
+.table tr td {
+  padding: 22px 0 22px;
+}
+tr.single td span {
+  padding: 0px 70px 0 20px;
+}
+.table > thead tr th span {
+  padding: 0px 70px 0 20px;
+}
+tr.one td span {
+  padding: 0 70px 0 20px;
+}
+tr.two td span {
+  padding: 0 70px 0 20px;
+}
+tr.double td span {
+  padding: 0 70px 0 20px;
+}
+tr.triple td span {
+  padding: 0 70px 0 20px;
+}
+.table tr td img {
+  margin: -12px 0 0px;
+}
+span.img-text {
+  padding: 0 !important;
+  color: #8ca4b6;
+}
+tr.single td h6 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+tr.one td h6 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+tr.two td h6 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+tr.double td h6 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+tr.triple td h6 {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 0 0 0 12px;
+  margin: 0;
+}
+td.sorting_1 {
+  color: #fff;
+}
+td {
+  color: #fff;
+}
+table.dataTable tbody tr {
+  background-color: transparent;
+}
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 26px 0px;
+}
+div#example_info {
+  display: none;
+}
+a#example_previous {
+  display: none;
+}
+a.paginate_button.current {
+  display: none !important;
+}
+a.paginate_button {
+  display: none !important;
+}
+
+/*-- ===============// start here cripto area \\=================*/
+.cripto-area {
+  width: 1000px;
+  display: block;
+  background: #0d182e;
+}
+.cripto-area p.section-text {
+  padding: 17px 0 7px;
+}
+.dreamit-cripto-thumb {
+  position: relative;
+  z-index: 1;
+}
+.cripto-main-thumb img {
+  width: 100%;
+}
+.cripto-thumb-inner {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+}
+/*cripto icon box*/
+.single-cripto-icon-box.up {
+  padding-top: 20px;
+}
+.cripto-icon {
+  display: inline-block;
+}
+.cripto-title {
+  display: inline-block;
+}
+.cripto-title h5 {
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 10px;
+}
+/*cripto button*/
+.cripto-button a {
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px 30px 15px 65px;
+  border: 1px solid #335756;
+  background: #1d2934;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  font-family: "Montserrat";
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+.cripto-button a:before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  left: -65px;
+  top: 0;
+  background: url(images/cripto-btn.png);
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.cripto-button a:after {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  left: 0;
+  top: -15px;
+  width: 39%;
+  height: 24%;
+  box-shadow: 12px 40px 52px #21b68f;
+  transition: 0.5s;
+}
+.cripto-button a:hover:after {
+  width: 88%;
+}

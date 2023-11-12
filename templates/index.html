@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Scraping Website</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- CSS FILES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="css/templatemo-ebook-landing.css" rel="stylesheet" />
+    <style>
+      /* Reset default browser styles */
+      body,
+      h1,
+      h2,
+      h3,
+      p,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* Main content styles */
+      main {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        /* position: fixed; */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+      }
+
+      .dropdown-content a {
+        color: white;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        top: 100%; /* Move the dropdown content below the element */
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      style="
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        position: relative; /* Ensure the header is relatively positioned */
+        z-index: 1;
+      "
+    >
+      <h1>Web Scraping Website</h1>
+      <h1
+        style="font-size: 30px; text-shadow: 3px 3px red; margin-left: 1000px"
+      >
+        {{data}}
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="/rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+          <li style="margin-left: 700px"><a href="/logout">Log out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section
+        class="hero-section d-flex justify-content-center align-items-center"
+        style="width: 103.28%; margin-left: -20px; margin-top: -40px"
+        id="section_1"
+      >
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-lg-6 col-12 mb-5 pb-5 pb-lg-0 mb-lg-0"
+              style="margin-top: -150px"
+            >
+              <h1 class="text-white mb-4">
+                Unleashing the Power of Web Scraping: Discover Valuable Insights
+                at Your Fingertips
+              </h1>
+
+              <a href="#section_2" class="btn custom-btn smoothscroll me-3"
+                >Discover More</a
+              >
+
+              <a href="#section_3" class="link link--kale smoothscroll"
+                >Contact the developer</a
+              >
+            </div>
+
+            <div class="hero-image-wrap col-lg-6 col-12 mt-3 mt-lg-0">
+              <img
+                src="images/education-online-books.png"
+                style="border-radius: 5%; border: 10px solid #000000"
+                class="hero-image img-fluid"
+                alt="education online books"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="featured-section"
+        style="width: 103.28%; margin-left: -20px"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-12">
+              <div class="avatar-group d-flex flex-wrap align-items-center">
+                <img
+                  src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg"
+                  class="img-fluid avatar-image"
+                  alt=""
+                />
+
+                <img
+                  src="images/avatar/portrait-young-redhead-bearded-male.jpg"
+                  class="img-fluid avatar-image avatar-image-left"
+                  alt=""
+                />
+
+                <img
+                  src="images/avatar/pretty-blonde-woman.jpg"
+                  class="img-fluid avatar-image avatar-image-left"
+                  alt=""
+                />
+
+                <img
+                  src="images/avatar/studio-portrait-emotional-happy-funny-smiling-boyfriend.jpg"
+                  class="img-fluid avatar-image avatar-image-left"
+                  alt=""
+                />
+
+                <div class="reviews-group mt-3 mt-lg-0">
+                  <strong>4.5</strong>
+
+                  <i class="bi-star-fill"></i>
+                  <i class="bi-star-fill"></i>
+                  <i class="bi-star-fill"></i>
+                  <i class="bi-star-fill"></i>
+                  <i class="bi-star"></i>
+
+                  <small class="ms-3">2,564 reviews</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-lg-5"></section>
+
+      <section
+        class="book-section section-padding"
+        style="width: 103.28%; margin-left: -20px"
+        id="section_2"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <img
+                src="images/tablet-screen-contents.jpg"
+                style="border-radius: 5%; border: 20px solid #000000"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <div class="book-section-info">
+                <h6>Modern &amp; Creative</h6>
+
+                <h2 class="mb-4">About the website</h2>
+
+                <p>
+                  Discover a world of data at your fingertips. We gather
+                  valuable insights from various websites through web scraping,
+                  providing you with the latest and most relevant information in
+                  an organized format. Welcome to our site!
+                </p>
+
+                <p>
+                  TemplateMo is one of the best websites to download free CSS
+                  templates for any purpose. This is an ebook landing page
+                  template using Bootstrap 5 CSS layout.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="contact-section section-padding"
+        style="margin-bottom: -40px; width: 103.28%; margin-left: -20px"
+        id="section_3"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-12">
+              <img src="images/me.jpg" class="author-image img-fluid" alt="" />
+            </div>
+
+            <div class="col-lg-6 col-12">
+              <h6 class="mt-5">Say hi and talk to us</h6>
+
+              <h2 class="mb-4">Contact</h2>
+
+              <p class="mb-3">
+                <i class="bi-geo-alt me-2"></i>
+                Rabat, Morocco
+              </p>
+
+              <p>
+                <a href="amimi1hamza@gmail.com" class="contact-link">
+                  amimi1hamza@gmail.com
+                </a>
+              </p>
+
+              <h6 class="site-footer-title mt-5 mb-3">Social</h6>
+
+              <ul class="social-icon mb-4">
+                <li class="social-icon-item">
+                  <a
+                    href="https://www.instagram.com/the_kuroyam/"
+                    target="_blank"
+                    class="social-icon-link bi-instagram"
+                  ></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a
+                    href="#"
+                    target="_blank"
+                    class="social-icon-link bi-twitter"
+                  ></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100021629332114"
+                    target="_blank"
+                    class="social-icon-link bi-facebook"
+                  ></a>
+                </li>
+
+                <li class="social-icon-item">
+                  <a
+                    href="https://api.whatsapp.com/send?phone=+212643626334"
+                    target="_blank"
+                    class="social-icon-link bi-whatsapp"
+                  ></a>
+                </li>
+              </ul>
+
+              <p class="copyright-text">
+                Copyright © 2023 HMTools <br /><br /><a rel="nofollow" href="#"
+                  >designed by Hamza AMIMI</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2023 HMTools. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

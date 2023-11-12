@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Web Scraping Website</title>
+    <style>
+      /* Reset default browser styles */
+      body,
+      h2,
+      h3,
+      p,
+      ul,
+      li {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Header styles */
+      header {
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        height: 60px;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      nav ul li a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      /* Main content styles */
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 40px;
+        color: #333;
+        margin-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 20px;
+        color: #fff;
+        text-align: center;
+      }
+      .image-container {
+        display: inline-block;
+        margin: 10px;
+        position: relative;
+      }
+
+      .image-container img {
+        width: 200px;
+        height: 200px; /* Adjust the desired height here */
+        object-fit: cover; /* Ensures the image fills the container */
+        border: 2px solid #ddd; /* Add border property */
+        border-radius: 5px; /* Add border radius for rounded corners */
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add a subtle box shadow */
+      }
+      .title-overlay {
+        position: absolute;
+        top: 100%; /* Initially, set the top position at the bottom of the image */
+        left: 0;
+        width: 180px;
+        height: 180px;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s, top 0.5s;
+      }
+
+      .image-container:hover .title-overlay {
+        opacity: 1;
+        top: 0; /* Move the title up to cover the entire image */
+      }
+
+      .title-overlay a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        padding: 12px 16px;
+      }
+
+      .dropdown-content a {
+        color: white;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        top: 100%; /* Move the dropdown content below the element */
+      }
+    </style>
+  </head>
+  <body>
+    <header style="height: 56px">
+      <h1 style="margin-top: 0px;">Web Scraping Website</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li class="dropdown">
+            <a href="" class="dropbtn">Tools</a>
+            <div class="dropdown-content">
+              <a href="platforms.html">scraping platforms</a><br />
+              <a href="rscr.html">full scrape</a><br />
+              <a href="">Tool3</a>
+            </div>
+          </li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Select a Platform to scrape</h2>
+
+      <div class="image-container">
+        <a href="youtube.html">
+          <img src="/static/rottentomatoes.jpg" alt="YouTube" />
+          <div class="title-overlay">
+            <a href="formmovie.html">scrape movie by name</a><br />
+            <br /><br /><br />
+            <a href="formallmovies.html">scrape all movies</a><br />
+            <br /><br /><br />
+          </div>
+        </a>
+      </div>
+
+      <div class="image-container">
+        <a href="jumia.html">
+          <img src="/static/jumia.png" alt="Jumia" />
+          <div class="title-overlay">
+            <a href="formproducts.html">scrape products</a><br />
+            <br /><br /><br />
+            <a href="formproduct.html">scrape product info</a><br />
+            <br /><br /><br />
+            <a href="jumia-link3.html">Title 3</a>
+          </div>
+        </a>
+      </div>
+
+      <div class="image-container">
+          <img src="/static/receptix.png" alt="receptix" />
+          <div class="title-overlay">
+            <a href="formjobs.html">scrape jobs by your skill</a><br />
+          </div>
+        </a>
+      </div>
+      <br>
+      
+    </main>
+
+    <footer>
+      <p>&copy; 2023 Your Website Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

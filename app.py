@@ -270,7 +270,7 @@ def login():
                 #return redirect(url_for('formlogin'))
     else:
         # If the request method is GET, it means the user is just accessing the login page
-        # You can render the login form template here
+        # You can render the login form template heree
         return render_template('login.html', data='')
 
 @app.route('/logout')
